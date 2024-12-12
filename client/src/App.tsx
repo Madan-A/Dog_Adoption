@@ -1,28 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import { fetchSampleData } from './services/apiService';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './components/HomePage'; // Ensure path is correct
+import Signup from './components/Signup';
+import Login from './components/login';
 
-interface SampleData {
-  id: number;
-  name: string;
-}
 
 const App: React.FC = () => {
-  const [data, setData] = useState<SampleData[]>([]);
-
-  useEffect(() => {
-    fetchSampleData().then(response => setData(response.data));
-  }, []);
-
   return (
-    <div className="App">
-      <h1>Sample Data</h1>
-      <ul>
-        {data.map(item => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
+    <div>
+        <Routes>
+            <Route path="/" element={<Login />} />
+            {/* <Route path="/signup" element={<Signup/>} /> */}
+            <Route path="/home" element={<HomePage/>} />
+            
+        </Routes>
     </div>
   );
 };
 
 export default App;
+ 
+// import React from "react";
+// import { Routes, Route, Navigate } from "react-router-dom";
+// import HomePage from "./components/HomePage";
+// import Login from "./components/login";
+// import Signup from "./components/Signup";
+
+// const App: React.FC = () => {
+//   return (
+//     <Routes>
+//       <Route path="/" element={<Login />} />
+//       <Route path="/signup" element={<Signup />} />
+//       <Route path="/home" element={<HomePage />} />
+//       <Route path="*" element={<Navigate to="/" />} /> {/* Fallback for undefined routes */}
+//     </Routes>
+//   );
+// };
+
+// export default App;
