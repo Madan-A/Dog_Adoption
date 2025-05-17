@@ -47,40 +47,7 @@ body {
     text-decoration: underline;
   }
   
-  /* Hero Section */
-  /* .hero {
-    background-image: url('https://th.bing.com/th/id/R.732440a404bebef70fe332b2aede9762?rik=SV5X1as3sHt0fg&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f04%2fHD-Cute-Dog-Wallpaper-backgrounds.jpg&ehk=zM6X8%2bi5ikW1QlWzhrQJvvwViQwrOzv0Zyol%2bx2JsBM%3d&risl=&pid=ImgRaw&r=0');
-    background-size:cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-    margin-top: 100px;
-  }
-  
-  .hero-content h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-  }
-  
-  .hero-content p {
-    font-size: 20px;
-    margin-bottom: 30px;
-  }
-  
-  .cta-button {
-    padding: 15px 30px;
-    background-color: teal;
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .cta-button:hover {
-    background-color: #e65c50;
-  } */
+ 
 
   .hero {
     background-image: url('https://th.bing.com/th/id/R.732440a404bebef70fe332b2aede9762?rik=SV5X1as3sHt0fg&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f04%2fHD-Cute-Dog-Wallpaper-backgrounds.jpg&ehk=zM6X8%2bi5ikW1QlWzhrQJvvwViQwrOzv0Zyol%2bx2JsBM%3d&risl=&pid=ImgRaw&r=0'); /* Replace with your image URL */

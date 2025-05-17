@@ -18,22 +18,7 @@ interface Dog {
     images: string; // Assuming images are stored as strings (URLs or filenames)
   }
 
-// const Adoption = () => {
 
-//     const [dogs, setDogs] = useState([]);
-
-//   // Fetch dog data from the backend
-//   useEffect(() => {
-//     fetch('http://localhost:5000/api/dogs')
-//       .then(res => res.json())
-//       .then(data => setDogs(data))
-//       .catch(err => console.error('Error fetching dogs:', err));
-//   }, []);
-
-//   const handleDogClick = (dogId: number) => {
-//     // Redirect to the dog profile page
-//     window.location.href = `/dog-profile/${dogId}`;
-//   };
 
 const Adoption: React.FC = () => {
     // Define the state with the type of `Dog[]`
@@ -41,14 +26,7 @@ const Adoption: React.FC = () => {
     const [searchBreed, setSearchBreed] = useState<string>(""); // State for search input
      const navigate = useNavigate();
   
-    // useEffect(() => {
-    //   // Fetch the dog data from an API or database here
-    //   // Example fetch:
-    //   fetch('http://localhost:5000/api/dogs') // Replace with your actual API endpoint
-    //     .then((response) => response.json())
-    //     .then(data =>{console.log("Fetched Dogs Data:", data);  setDogs(data);})
-    //     .catch(error => console.error('Error fetching dogs:', error));
-    // }, []);
+  
 
     useEffect(() => {
       fetch('http://localhost:5000/api/dogs')
