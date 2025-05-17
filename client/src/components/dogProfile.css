@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+   
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+   
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .dog-profile-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header Section */
+  .dog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .dog-name-breed h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    animation: slideInLeft 1s ease-out;
+  }
+  
+  .dog-breed {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+  }
+  
+  .dog-image {
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .dog-image:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Story Section */
+  .dog-story {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .dog-story h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  /* Health Info Section */
+  .health-info {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(185, 25, 25, 0.05);
+  }
+  
+  .health-info h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .health-details {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .health-details div {
+    flex: 1;
+    padding: 10px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+  }
+  
+  .health-details h3 {
+    font-size: 1.2rem;
+    color: #34495e;
+  }
+  
+  /* Adoption Details Section */
+  .adoption-details {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .adoption-details h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .adopt-button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .adopt-button:hover {
+    background-color: #2ecc71;
+  }
+  
+  /* Breed Information Section */
+  .breed-info {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .breed-info h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  /* Dog's Favorites Section */
+  .dogs-favorites {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .dogs-favorites h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .dogs-favorites ul {
+    list-style-type: none;
+  }
+  
+  .dogs-favorites li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ecf0f1;
+  }
+  
+  /* Adopter Requirements Section */
+  .adopter-requirements {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .adopter-requirements h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .adopter-requirements ul {
+    list-style-type: none;
+  }
+  
+  .adopter-requirements li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ecf0f1;
+  }
+  
+  /* Testimonials Section */
+  .testimonials {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .testimonials h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial p {
+    font-style: italic;
+    color: #7f8c8d;
+  }
+
+
+  /* Adoption Center Info Section */
+.adoption-center {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .adoption-center h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .adoption-center p {
+    color: #34495e;
+    font-size: 1.2rem;
+  }
+  
+  /* Call-to-Action Button Section */
+  /* .cta-container {
+    text-align: center;
+    margin-top: 40px;
+    animation: fadeIn 1s ease-out;
+  } */
+  .cta-container {
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeIn 1s ease-out;
+  }
+   /* .adopt-button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  } */
+  
+  .adopt-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-container .adopt-button:hover {
+    background-color: #2ecc71;
+  }
+  
+  /* Animation Keyframes */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  

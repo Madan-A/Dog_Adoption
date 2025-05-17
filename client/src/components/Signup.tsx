@@ -93,7 +93,7 @@ const Signup: React.FC = () => {
 
         const result = await response.json();
         if (response.ok) {
-          navigate("/home"); // Redirect to Home on successful signup
+          navigate("/"); // Redirect to Home on successful signup
         } else {
           alert("Signup failed: " + result.message);
         }
@@ -125,7 +125,7 @@ const Signup: React.FC = () => {
           --------------------OR--------------------
         </div>
 
-        <div className="form-container">
+        <div className="form-containersssss">
           <form onSubmit={handleSubmit}>
             <label className="label">
               Name:
@@ -204,7 +204,7 @@ const Signup: React.FC = () => {
       {/* Right Section */}
       <div className="signup-right">
         <img src="https://th.bing.com/th/id/OIP.5aKhA8rhSGnJzNnkGJgtLwHaLH?rs=1&pid=ImgDetMain" alt="image" className="signup-img" />
-        <Link to="/home">Go to Home</Link>
+       
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ body {
     border-radius: 50px;
     box-shadow: 5px 5px 5px rgb(166, 238, 239);
     width: 1200px;
-    margin: 100px;
+    margin: 155px;
     margin-top: 50px;
     margin-bottom: 50px;
   }
@@ -97,7 +97,7 @@ body {
   }
   
   /* Form Container */
-  .form-container {
+  .form-containersssss {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,8 +113,10 @@ body {
   
   /* Logo */
   .logo {
-    width: 100px;
-    height: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    
     margin-bottom: 15px;
   }
   

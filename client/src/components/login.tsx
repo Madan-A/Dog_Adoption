@@ -86,6 +86,7 @@ const Login: React.FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  // const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage login state
   const navigate = useNavigate();
 
   const handleSignUpClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -110,9 +111,9 @@ const Login: React.FC = () => {
 
       if (response.ok) {
         console.log("Login successful:", result);
-        // Save token (if applicable) and navigate to home
-        localStorage.setItem("token", result.token);
-        navigate("/home");
+        // setIsLoggedIn(true); // Set logged-in state to true
+        localStorage.setItem("token", result.token); // Save token if needed
+        navigate("/"); // Navigate to the homepage after successful login
       } else {
         setErrorMessage(result.error || "Login failed");
       }
@@ -124,8 +125,8 @@ const Login: React.FC = () => {
 
   return (
     <div className="container">
-      <div className="form-container">
-        <img src="/logo.png" alt="Logo" className="logo" />
+      <div className="form-containersssss">
+        <img src="./logo.jpg" alt="Logo" className="logo" width="500px" height="500px" />
         <h3 className="heading">Welcome!</h3>
         <input
           type="text"
@@ -156,3 +157,4 @@ const Login: React.FC = () => {
 };
 
 export default Login;
+

@@ -1,0 +1,304 @@
+/* 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .vet-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .vet-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  input, select, textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    border-color: #008cba;
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  button.submit-button {
+    padding: 10px 15px;
+    background-color: #008cba;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button.submit-button:hover {
+    background-color: #005f80;
+  }
+  
+  @media (max-width: 768px) {
+    .vet-container {
+      padding: 15px;
+    }
+  
+    input, select, textarea {
+      font-size: 14px;
+    }
+  
+    button.submit-button {
+      font-size: 14px;
+    }
+  }
+   */
+
+   /* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.vet-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  color: teal;
+}
+
+/* Form Styles */
+.vet-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-size: 14px;
+  color: #aaa;
+}
+
+button.submit-button {
+  grid-column: span 2;
+  padding: 10px 15px;
+  background-color: rgb(59, 87, 198);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button.submit-button:hover {
+  background-color: #1674b8;
+}
+
+/* About Doctors Section */
+.about-doctors {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.about-doctors h2 {
+  color: #0056b3;
+}
+
+.doctor-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.doctor-card {
+  text-align: left;
+  width: 200px;
+}
+
+.doctor-card  h3{
+  text-align: center;
+  width: 200px;
+  font-size: 100px;
+}
+
+.doctor-card img {
+  width: 120%;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.doctor-card h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.doctor-card p {
+  font-size: 14px;
+  color: #666;
+  width:275px;
+}
+
+/* Treated Dogs Section */
+.treated-dogs {
+  
+  margin-top: 40px;
+  text-align: center;
+}
+
+.treated-dogs h2 {
+  color: #0056b3;
+}
+
+.dog-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.dog-card {
+  text-align: center;
+  width: 200px;
+  margin-bottom: 7px;
+}
+
+.dog-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.dog-card h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.dog-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Footer Styles */
+.vet-footer {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #0056b3;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-download a {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer-download a:hover {
+  text-decoration: underline;
+}
+
+address {
+  font-style: normal;
+  font-size: 14px;
+  color: white;
+}

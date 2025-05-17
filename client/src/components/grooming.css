@@ -1,0 +1,603 @@
+/* General styles */
+.grooming-container {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  .grooming-header {
+    background-color: rgb(69, 144, 144);
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .grooming-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .grooming-header p {
+    font-size: 1.2rem;
+  }
+  
+  /* Services Offered Section */
+  .services-offered {
+    padding: 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+  
+  .services-offered h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .services-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .service-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .service-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Grooming Packages */
+  .grooming-services {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .grooming-services h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .filter-container {
+    margin-bottom: 20px;
+  }
+  
+  .filter-container label {
+    font-size: 1.2rem;
+  }
+  
+  .package-list {
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adjust spacing between cards */
+  margin: 20px 0;
+  }
+  
+  .package-card {
+    font-size: 25px;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: calc(33.33% - 20px); /* Ensures 3 cards per row with spacing */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .package-card ul {
+    list-style-type: disc; /* Use bullets */
+    padding-left: 20px; /* Add space to align bullets */
+    text-align: centre;
+
+    list-style-type: none; /* Align text properly */
+  }
+  
+  .package-card li {
+    margin: 10px 0px; /* Add space between items */
+    font-size: 17px; /* Adjust the font size */
+    color: #555; /* Slightly lighter color for the text */
+  }
+  /* Hover Effect for Package Cards */
+  .package-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive Behavior for Smaller Screens */
+  @media (max-width: 768px) {
+    .package-card {
+      width: calc(50% - 20px); /* Two cards per row for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .package-card {
+      width: 100%; /* One card per row for very small screens */
+    }
+  }
+  
+  .package-card.selected {
+    border: 2px solid #4CAF50;
+    font-size: 0px;
+  }
+  
+  .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4CAF50;
+  }
+  
+  /* Testimonials Section */
+  .testimonial-section {
+    padding: 20px;
+    background-color: #fafafa;
+    text-align: center;
+  }
+  
+  .testimonial-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .testimonials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .testimonial-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+  }
+
+  
+  .testimonial-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  .testimonial-card {
+    animation: slideIn 1s ease-in-out;
+  }
+  .testimonial-card:hover {
+    transform: translateY(-10px);
+    border: 3px solid rgb(65, 225, 172);
+  }
+  
+  
+  /* Meet Our Groomers Section */
+  .groomers-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+  
+  .groomers-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .groomers-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .grooming-card {
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 100px;
+    background-color: #dd2222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .groomer-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+
+.groomer-card img:hover {
+    transform: scale(1.1) rotate(10deg);
+    
+  }
+  
+  .groomer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .groomer-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .groomer-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .groomer-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* FAQ Section */
+  /* FAQ Section */
+.faq-section {
+    padding: 13px;
+    background-color: #fafafa;
+    text-align: center;
+  }
+  
+  .faq-section {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .faq-card {
+    animation: bounceIn 0.5s ease-in-out;
+  }
+  .faq-section h2 {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+  
+  .faq-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px 20px;
+    width: 100%; /* Full width */
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .faq-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    color: #333;
+    width: 100%;
+  }
+  
+  .faq-question h3 {
+    margin: 0;
+    text-align: left;
+    
+    flex-grow: 1; /* Ensure the text takes as much space as possible */
+  }
+  
+  .faq-icon {
+    font-size: 1.2rem;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-icon.open {
+    transform: rotate(180deg);
+  }
+  
+  .faq-answer {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+    padding: 15px 20px;
+    border-left: 3px solid #4CAF50;
+    background-color: #f9f9f9;
+    font-style: italic;
+    animation: slideDown 5s ease-in-out;
+  }
+  
+  /* Keyframes for animations */
+  /* @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  } */
+   /* Animations */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* @keyframes slideDown {
+    from {
+      max-height: 0;
+      opacity: 0;
+    }
+    to {
+      max-height: 200px;
+      opacity: 1;
+    }
+  } */
+  @keyframes slideIn {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.9);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .faq-question h3 {
+      font-size: 1.2rem;
+    }
+  
+    .faq-answer {
+      font-size: 0.9rem;
+    }
+  }
+  
+  
+  /* Footer Section */
+  .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
+  .social-links {
+    margin: 10px 0;
+  }
+  
+  .social-links a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .social-links a:hover {
+    color: #4CAF50;
+  }
+
+  /* Grooming Services Section */
+.services-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  .services-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    animation: slideInFromTop 1s ease-in-out;
+  }
+  
+  .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .service-card {
+    width: 300px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid #4CAF50;
+    transition: transform 0.5s ease;
+  }
+  
+  .service-card:hover img {
+    transform: scale(1.1);
+  }
+  
+  .service-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 20px 0 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .service-card:hover h3 {
+    color: #4CAF50;
+  }
+  
+  .service-card p {
+    font-size: 0.9rem;
+    color: #666;
+    padding: 0 15px 20px;
+  }
+  
+  .service-card:hover {
+    transform: translateY(0);
+    opacity: 1;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .services-animate {
+    animation: fadeUp 0.8s ease-in-out forwards;
+  }
+  
+  /* Meet Our Groomers Section */
+  .groomers-section {
+    padding: 50px 20px;
+    background: linear-gradient(to right, #f3f3f3, #ffffff);
+    text-align: center;
+  }
+  
+  .groomers-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .groomer-card {
+    display: inline-block;
+    margin: 15px;
+    text-align: center;
+  }
+  
+  .groomer-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #4CAF50;
+  }
+  
+  .groomer-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0 5px;
+  }
+  
+  .groomer-card p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+  .navigate-button {
+    background-color: #f76c6c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .navigate-button:hover {
+    background-color: #ff4b4b;
+    transform: scale(1.05);
+  }
+  
+  .navigate-button:active {
+    transform: scale(0.95);
+  }
+  
+  

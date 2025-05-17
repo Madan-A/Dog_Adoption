@@ -1,0 +1,157 @@
+.grooming-form-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    
+ 
+  }
+
+  .whole
+  {
+    background-image: url('https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3BsYXlcLzY1NzM2ZDcxLTFmMjAtNGMyZi04ZmYzLTJhZmMxZDg3NzhlMS0xMjEwLTY4MC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgyOH19fQ==');
+    background-size: cover; /* Makes sure the image covers the entire container */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position:center; /* Centers the image */
+  opacity: 1;
+  }
+  
+  
+  .grooming-form label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  .grooming-form input,
+  .grooming-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .toggle-buttons {
+    margin: 20px 0;
+  }
+  
+  .toggle-buttons p {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .toggle-buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .toggle-buttons button.active {
+    background-color: teal;
+    border: 3px solid rgb(0, 255, 13)  ;
+    color: white;
+  }
+  
+
+  
+
+
+  .description-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .description-item {
+    text-align: center;
+    max-width: 300px;
+  }
+  
+  .description-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+  }
+  
+  .description-item h3 {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  .description-item p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .footer-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #003366;
+    color: white;
+  }
+  
+  .footer-column {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .footer-column h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #ddd;
+  }
+  
+  .footer-column ul li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .social-media-icons a {
+    margin-right: 10px;
+    font-size: 20px;
+    color: white;
+  }
+  
+  .social-media-icons a:hover {
+    color: orange;
+  }
+  h2{
+    text-align: center;
+    text-decoration-color: aquamarine;
+  }
+
+
+  button[type="submit"] {
+    background-color: #3a7fdf;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  button[type="reset"] {
+    background-color: #3a7fdf ;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
