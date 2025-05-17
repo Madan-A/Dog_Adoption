@@ -20,9 +20,13 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
-    
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "**/*.test.tsx",
+    "**/*.test.ts",
+    "node_modules"
   ]
 }
