@@ -34,18 +34,6 @@ const createUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             message: 'User created successfully',
             response
         });
-        // function (err: { message: any; }) {
-        //   if (err) {
-        //     console.error('Error inserting data into the User table:', err.message);
-        //     res.status(500).json({ error: 'Server error while creating the user' });
-        //   }
-        //   // const userId = ( as any).id;
-        //   res.status(201).json({
-        //     message: 'User created successfully',
-        //    //  user: this as any,
-        //     // userId: this.lastID, // `this.lastID` gives the auto-incremented ID (if applicable)
-        //   });
-        // });
     }
     catch (error) {
         console.error('Unexpected error during user creation:', error);

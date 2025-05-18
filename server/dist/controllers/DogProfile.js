@@ -8,14 +8,6 @@ const express_1 = __importDefault(require("express"));
 const sqlite3_1 = __importDefault(require("sqlite3"));
 // Function to fetch a specific dog's profile details by ID
 const getDogProfile = (req, res) => {
-    //   const app = express();
-    // const db = new sqlite3.Database('./database.db', sqlite3.OPEN_READWRITE, (err) => {
-    //   if (err) {
-    //     console.error("Error connecting to SQLite database:", err.message);
-    //   } else {
-    //     console.log("Connected to the SQLite database");
-    //   }
-    // });
     console.log("GET /api/dogs/:id route hit");
     console.log("req.params:", req.params);
     console.log("Dog ID:", req.params.id);
