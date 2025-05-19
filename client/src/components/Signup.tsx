@@ -93,7 +93,7 @@ const Signup: React.FC = () => {
 
         const result = await response.json();
         if (response.ok) {
-          navigate("/"); // Redirect to Home on successful signup
+          navigate("/homepage"); // Redirect to Home on successful signup
         } else {
           alert("Signup failed: " + result.message);
         }

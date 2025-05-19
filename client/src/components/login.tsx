@@ -36,7 +36,7 @@ const Login: React.FC = () => {
         console.log("Login successful:", result);
         // setIsLoggedIn(true); // Set logged-in state to true
         localStorage.setItem("token", result.token); // Save token if needed
-        navigate("/"); // Navigate to the homepage after successful login
+        navigate("/homepage"); // Navigate to the homepage after successful login
       } else {
         setErrorMessage(result.error || "Login failed");
       }
