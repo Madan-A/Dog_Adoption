@@ -45,7 +45,7 @@ const GroomingForm = () => {
 
     try {
       console.log('Form Data Sent:', JSON.stringify(formData));
-      const response = await fetch("http://localhost:5000/api/groomingForm", {
+      const response = await fetch("https://dog-adoption-1-backend.onrender.com/api/groomingForm", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

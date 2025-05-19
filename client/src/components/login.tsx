@@ -24,7 +24,7 @@ const Login: React.FC = () => {
     const data = { username, password };
 
     try {
-      const response = await fetch("http://localhost:5000/api/login", {
+      const response = await fetch("https://dog-adoption-1-backend.onrender.com/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
