@@ -1,4 +1,5 @@
 "use strict";
+// import { Request, Response } from "express";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -27,22 +28,28 @@ const loginController = (req, res) => __awaiter(void 0, void 0, void 0, function
     // Validate input
     if (!username || !password) {
         res.status(400).json({ message: "Username and password are required" });
+        return;
     }
     try {
-        // Fetch all users from the database
-        const users = yield db.all("SELECT * FROM users;");
-        // Match the username and password using Array.map and find
-        const matchedUser = users.find((user) => user.name === username && user.password === password);
-        if (matchedUser) {
-            // Exclude sensitive fields like the password from the response
-            const { password } = matchedUser, userWithoutPassword = __rest(matchedUser, ["password"]);
-            res
-                .status(200)
-                .json({ message: "Login successful", user: userWithoutPassword });
-        }
-        else {
+        const query = "SELECT * FROM users WHERE name = $1";
+        const result = yield db.query(query, [username]);
+        if (result.rows.length === 0) {
+            // User not found
             res.status(401).json({ message: "Invalid username or password" });
+            return;
         }
+        const user = result.rows[0];
+        if (user.password !== password) {
+            // Password mismatch
+            res.status(401).json({ message: "Invalid username or password" });
+            return;
+        }
+        // Exclude password from the response
+        const { password: _ } = user, userWithoutPassword = __rest(user, ["password"]);
+        res.status(200).json({
+            message: "Login successful",
+            user: userWithoutPassword,
+        });
     }
     catch (error) {
         console.error("Unexpected error during login:", error);

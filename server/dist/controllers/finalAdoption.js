@@ -1,4 +1,5 @@
 "use strict";
+// import { Request, Response } from 'express';
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -11,41 +12,38 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FinalAdoption = void 0;
 const FinalAdoption = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { name, email, phone, street, city, state, zipcode, country, adoption_date, notes, question } = req.body;
+    const { name, email, phone, street, city, state, zipcode, country, adoption_date, notes, question, } = req.body;
     // Validate required fields
     if (!name || !email || !phone || !street || !city || !state || !zipcode || !country || !adoption_date || !notes || !question) {
         res.status(400).json({
             error: 'Name,email,phone,street,city,state,zipcode,country,adoption_date,notes,question are all required',
         });
-        return; // End execution here
+        return;
     }
-    const db = req.app.locals.db; // Get the database instance
+    const db = req.app.locals.db; // PostgreSQL client instance
     if (!db) {
         console.error('Database instance not found in app.locals.');
         res.status(500).json({ error: 'Database connection error' });
-        return; // End execution here
+        return;
     }
     const query = `
-        INSERT INTO personal_adoption (name,email,phone,street,city,state,zipcode,country,adoption_date,notes,question)
-        VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?,?)
-    `;
+    INSERT INTO personal_adoption (name, email, phone, street, city, state, zipcode, country, adoption_date, notes, question)
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+    RETURNING *
+  `;
     try {
-        // Log input data for debugging
         console.log('Debugging input:', name, email, phone, street, city, state, zipcode, country, adoption_date, notes, question);
-        // Insert the data into the database
-        const response = yield db.run(query, [
-            name, email, phone, street, city, state, zipcode, country, adoption_date, notes, question
+        const result = yield db.query(query, [
+            name, email, phone, street, city, state, zipcode, country, adoption_date, notes, question,
         ]);
         res.status(201).json({
             message: 'Booked Successfully',
-            response,
+            data: result.rows[0], // Return the inserted row data
         });
-        return; // End execution here
     }
     catch (error) {
-        console.error('Unexpected error during user creation:', error);
+        console.error('Unexpected error during booking:', error);
         res.status(500).json({ error: 'Unexpected server error' });
-        return; // End execution here
     }
 });
 exports.FinalAdoption = FinalAdoption;

@@ -1,4 +1,5 @@
 "use strict";
+// import { Request, Response } from 'express';
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -15,25 +16,25 @@ const Veterinary = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     // Validate required fields
     if (!dogName || !breed || !age || !gender || !appointmentDate || !address || !pincode || !healthDescription) {
         res.status(400).json({
-            error: 'dogName, breed, age, appointementDate, address, pincode, and healthDescription are all required',
+            error: 'dogName, breed, age, gender, appointmentDate, address, pincode, and healthDescription are all required',
         });
-        return; // End execution here
+        return;
     }
-    const db = req.app.locals.db; // Get the database instance
+    const db = req.app.locals.db; // PostgreSQL client or pool
     if (!db) {
         console.error('Database instance not found in app.locals.');
         res.status(500).json({ error: 'Database connection error' });
-        return; // End execution here
+        return;
     }
     const query = `
-        INSERT INTO dog (dogName, breed,gender, age, appointmentDate, address, pincode, healthDescription)
-        VALUES (?, ?, ?, ?, ?, ?, ?,?)
+        INSERT INTO dog (dogName, breed, gender, age, appointmentDate, address, pincode, healthDescription)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+        RETURNING *;
     `;
     try {
-        // Log input data for debugging
         console.log('Debugging input:', dogName, breed, gender, age, appointmentDate, address, pincode, healthDescription);
-        // Insert the data into the database
-        const response = yield db.run(query, [
+        // Run query with positional parameters
+        const result = yield db.query(query, [
             dogName,
             breed,
             gender,
@@ -45,14 +46,12 @@ const Veterinary = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         ]);
         res.status(201).json({
             message: 'Booked Successfully',
-            response,
+            data: result.rows[0], // return the inserted row
         });
-        return; // End execution here
     }
     catch (error) {
-        console.error('Unexpected error during user creation:', error);
+        console.error('Unexpected error during insertion:', error);
         res.status(500).json({ error: 'Unexpected server error' });
-        return; // End execution here
     }
 });
 exports.Veterinary = Veterinary;

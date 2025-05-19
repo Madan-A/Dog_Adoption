@@ -1,4 +1,5 @@
 "use strict";
+// import { Request, Response } from "express";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -11,16 +12,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.adoption = void 0;
 const adoption = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    //const query = 'SELECT * FROM courses;';  // SQL query to fetch all courses from the 'courses' table
-    const db = req.app.locals.db; // Get the database connection from app.locals
+    const db = req.app.locals.db; // This should be your pg Pool or Client instance
     if (!db) {
         console.error("Database instance not found in app.locals.");
         res.status(500).send("Database connection error");
+        return;
     }
     try {
-        // Execute the query to get all courses
-        const rows = yield db.all("SELECT images,dogName,status,id,breed FROM adoption_new;");
-        res.json(rows);
+        // Use pg client query method
+        const result = yield db.query("SELECT images, dogName, status, id, breed FROM adoption_new;");
+        res.json(result.rows);
     }
     catch (error) {
         console.error("Unexpected error:", error);

@@ -1,32 +1,52 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
+// import sqlite3 from 'sqlite3';
+// import { open } from 'sqlite';
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.connectDB = void 0;
-const sqlite3_1 = __importDefault(require("sqlite3"));
-const sqlite_1 = require("sqlite");
-// Function to connect to SQLite database
-const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const db = yield (0, sqlite_1.open)({
-            filename: './database.db', // Path to your SQLite database file
-            driver: sqlite3_1.default.Database // Using sqlite3 driver
-        });
-        return db;
-    }
-    catch (error) {
-        console.error('Error connecting to SQLite database:', error);
-        throw new Error('Database connection failed');
-    }
+// // Function to connect to SQLite database
+// export const connectDB = async () => {
+//   try {
+//     const db = await open({
+//       filename: './database.db',  // Path to your SQLite database file
+//       driver: sqlite3.Database    // Using sqlite3 driver
+//     });
+//     return db;
+//   } catch (error) {
+//     console.error('Error connecting to SQLite database:', error);
+//     throw new Error('Database connection failed');
+//   }
+// };
+// Postgre SQL
+// Correct witl local postgrs sql
+// import { Pool } from 'pg';
+// import dotenv from 'dotenv';
+// dotenv.config();
+// const isProduction = process.env.NODE_ENV === 'production';
+// const pool = new Pool({
+//   connectionString: process.env.DATABASE_URL,
+//   ssl: isProduction
+//     ? {
+//         rejectUnauthorized: false, // Needed for many cloud providers, like Render
+//       }
+//     : false, // No SSL in local development
+// });
+// pool.on('connect', () => {
+//   console.log('Connected to PostgreSQL');
+// });
+// export default pool;
+// Render Postgres SQL
+const pg_1 = require("pg");
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
+const pool = new pg_1.Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false, // Always use SSL (Render requires it)
+    },
 });
-exports.connectDB = connectDB;
+pool.on('connect', () => {
+    console.log('Connected to PostgreSQL');
+});
+exports.default = pool;

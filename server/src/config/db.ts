@@ -16,25 +16,49 @@
 // };
 
 // Postgre SQL
+// Correct witl local postgrs sql
+
+
+// import { Pool } from 'pg';
+// import dotenv from 'dotenv';
+
+// dotenv.config();
+
+// const isProduction = process.env.NODE_ENV === 'production';
+
+// const pool = new Pool({
+//   connectionString: process.env.DATABASE_URL,
+//   ssl: isProduction
+//     ? {
+//         rejectUnauthorized: false, // Needed for many cloud providers, like Render
+//       }
+//     : false, // No SSL in local development
+// });
+
+// pool.on('connect', () => {
+//   console.log('Connected to PostgreSQL');
+// });
+
+// export default pool;
+
+
+// Render Postgres SQL
 
 import { Pool } from 'pg';
+import dotenv from 'dotenv';
 
-// Create a new connection pool using the Supabase PostgreSQL URL
+dotenv.config();
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: false, // Required for Supabase SSL
+    rejectUnauthorized: false, // Always use SSL (Render requires it)
   },
 });
 
-export const connectDB = async () => {
-  try {
-    const client = await pool.connect();
-    console.log('Connected to PostgreSQL (Supabase)');
-    return client;
-  } catch (error) {
-    console.error('Error connecting to PostgreSQL database:', error);
-    throw new Error('Database connection failed');
-  }
-};
+pool.on('connect', () => {
+  console.log('Connected to PostgreSQL');
+});
+
+export default pool;
 
