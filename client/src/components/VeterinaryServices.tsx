@@ -34,7 +34,7 @@ const VeterinaryServices: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Prevent default form submission
     try {
-      const response = await fetch("http://localhost:5000/api/veterinary", {
+      const response = await fetch("https://dog-adoption-backend.onrender.com/api/veterinary", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
