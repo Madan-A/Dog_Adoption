@@ -29,7 +29,7 @@ const Adoption: React.FC = () => {
   
 
     useEffect(() => {
-      fetch('https://dog-adoption-1-backend.onrender.com/api/dogs')
+      fetch('http://localhost:5000/api/dogs')
         .then((response) => response.json())
         .then((data) => {
           console.log("Fetched Dogs Data:", data); // Log fetched data
@@ -48,7 +48,7 @@ const Adoption: React.FC = () => {
       }
         try {
           // Fetch the dog's details from the backend
-          const response = await fetch(`https://dog-adoption-1-backend.onrender.com/api/dogs/${id}`);
+          const response = await fetch(`http://localhost:5000/api/dogs/${id}`);
           if (!response.ok) {
             throw new Error("Failed to fetch dog details");
           }

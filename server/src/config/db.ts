@@ -49,12 +49,18 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+// const pool = new Pool({
+//   connectionString: process.env.DATABASE_URL,
+//   ssl: {
+//     rejectUnauthorized: false, // Always use SSL (Render requires it)
+//   },
+// });
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false, // Always use SSL (Render requires it)
-  },
+  // ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
 });
+
 
 pool.on('connect', () => {
   console.log('Connected to PostgreSQL');

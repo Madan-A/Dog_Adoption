@@ -40,11 +40,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const pg_1 = require("pg");
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
+// const pool = new Pool({
+//   connectionString: process.env.DATABASE_URL,
+//   ssl: {
+//     rejectUnauthorized: false, // Always use SSL (Render requires it)
+//   },
+// });
 const pool = new pg_1.Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false, // Always use SSL (Render requires it)
-    },
+    // ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
 });
 pool.on('connect', () => {
     console.log('Connected to PostgreSQL');

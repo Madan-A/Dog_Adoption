@@ -37,7 +37,7 @@ const FinalAdoption = () => {
 
     try {
       console.log('Form Data Sent:', JSON.stringify(formData));
-      const response = await fetch("https://dog-adoption-1-backend.onrender.com/api/finalAdoption", {
+      const response = await fetch("http://localhost:5000/api/finalAdoption", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
